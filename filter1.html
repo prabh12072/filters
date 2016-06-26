@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		filter-Q1</title> 
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+
+	<script type="text/javascript">
+		var mod=angular.module("q1",[]);
+		mod.controller("controller",function($scope){
+			$scope.name="prabhjot singh";
+		});
+	</script>
+</head>
+<body>
+
+	<div ng-app="q1" ng-controller="controller">
+		<p>The name is {{ name | uppercase }}</p><br>
+	</div>
+
+</body>
+</html>

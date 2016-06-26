@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>filter - Q3</title> 
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+
+	<script type="text/javascript">
+		var mod=angular.module("q3",[]);
+		mod.controller("controller",function($scope){
+			$scope.names = ["aditya", "kundan", "mayank", "ankit", "ashwin", "hardik","shrey"];
+		});
+	</script>
+</head>
+<body>
+
+	<div ng-app="q3" ng-controller="controller">
+		<p> The array before sorting is : </p>
+		<ul>
+			<li ng-repeat="i in names "> {{i}} </li>
+		</ul>
+		<p> The array after sorting is : </p>
+		<ul>
+			<li ng-repeat="j in names | orderBy"> {{j}} </li>
+		</ul>
+
+	</div>
+
+</body>
+</html>

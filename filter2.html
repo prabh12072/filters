@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Filter Q2</title> 
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+	<script type="text/javascript">
+		var mod=angular.module("q2",[]);
+		mod.controller("controller",function($scope){
+			$scope.num = 7.547679203;
+		});
+	</script>
+</head>
+<body>
+	<div ng-app="q2" ng-controller="controller">
+		<p>The number is {{ num | number : 2 }}</p><br>
+	</div>
+</body>
+</html>
