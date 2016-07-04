@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html>
 <head>
 	<title>filter - Q3</title> 
@@ -18,10 +18,92 @@
 		<ul>
 			<li ng-repeat="i in names "> {{i}} </li>
 		</ul>
-		<p> The array after sorting is : </p>
-		<ul>
+		<p> The -->array after sorting is : </p>
+	<!--	<ul>
 			<li ng-repeat="j in names | orderBy"> {{j}} </li>
 		</ul>
+
+	</div>
+
+</body>
+</html>-->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		q3
+	</title> 
+	<!-- Create an array of strings and sort it using the OrderBy Filter.	-->
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+
+	<script type="text/javascript">
+var mod=angular.module("q3",[]);
+		mod.controller("controller",function($scope){
+			$scope.person = [
+				 	{firstName: 'aditya', lastName: 'Kumar'},
+		            {firstName: 'kundan', lastName: 'kumar'},
+		            {firstName: 'mayank', lastName: 'verma'},
+		            {firstName: 'ankit', lastName: 'mittal'},
+		            {firstName: 'ashwin', lastName: 'chauhan'},
+		            {firstName: 'hardik', lastName: 'Cgupta'}
+		            
+			];
+			$scope.sortType     = 'name'; 
+ 			$scope.sortReverse  = false;
+		});
+	</script>
+	</head>
+<body ng-app="q3">
+
+	<div ng-controller="controller">
+	<h3> ORDER BY</h3> <br>
+		  <div class="alert alert-info">
+		    Sort Type: {{ sortType }} <br> <!-- Defining Sort Type -->
+		    Sort Reverse: {{ sortReverse }} <br> <!-- For Ascending/Descending -->
+		    [NOTE : Click on table heading to order by that element] <br>
+		  </div>
+
+		   <table class="table table-bordered table-striped">
+    	
+   		   <thead>
+		      <tr class="success">
+		        <td>
+		          <a href="#" ng-click="sortType = 'First_Name'; sortReverse = !sortReverse">
+		            First Name 
+		            <span ng-show="sortType == 'First_Name' && !sortReverse" class="fa fa-caret-down"></span>
+		            <span ng-show="sortType == 'First_Name' && sortReverse" class="fa fa-caret-up"></span>
+		          </a>
+		        </td>
+		        <td>
+		          <a href="#" ng-click="sortType = 'Last_Name'; sortReverse = !sortReverse">
+		           Last Name 
+		            <span ng-show="sortType == 'Last_Name' && !sortReverse" class="fa fa-caret-down"></span>
+		            <span ng-show="sortType == 'Last_Name' && sortReverse" class="fa fa-caret-up"></span>
+		          </a>
+		        </td>
+		       </tr>
+		    </thead>
+		    
+		    <tbody>
+		      <tr ng-repeat="roll in person | orderBy:sortType:sortReverse ">
+		        <td>{{ roll.firstName }}</td>
+		        <td>{{ roll.lastName }}</td>
+		       </tr>
+		    </tbody>
+    
+ 		</table>
+ 		</div>
 
 	</div>
 
